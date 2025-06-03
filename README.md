@@ -1,7 +1,3 @@
-Perfeito! Aqui está o documento completo, já com a funcionalidade de pets desaparecidos devidamente integrada e atualizada, incluindo a substituição de “porte” por “nome pelo qual o animal atende” na seção de desaparecidos:
-
----
-
 # 🐾 *PetMatch - Sistema de Adoção Consciente de Animais*
 
 ## 📱💻 Projeto de TCC
