@@ -102,22 +102,6 @@ No ponto de adoção, haverá um terminal com tecnologia **Arduino** e **QR Code
 
 ---
 
-## 🔍 Funcionalidade Extra: Pets Desaparecidos
-
-O PetLar também terá um módulo específico para auxiliar na busca de pets desaparecidos. O tutor poderá cadastrar:
-
-* Raça
-* Cor
-* Nome pelo qual o animal atende
-* Foto do pet
-* Descrição adicional (características marcantes, comportamento)
-* Local e data do desaparecimento
-* Dados de contato (telefone, e-mail)
-
-Essas informações ficarão **disponíveis publicamente** para todos os usuários, aumentando as chances de reencontro.
-
----
-
 ## 🧩 Área Exclusiva para ONGs
 
 As ONGs parceiras contarão com um **painel administrativo exclusivo**, que permitirá:
@@ -134,6 +118,22 @@ As ONGs parceiras contarão com um **painel administrativo exclusivo**, que perm
 * Gasto de energia diário do animal
 * Necessidades específicas
 * Comportamento (mais agitado ou mais calmo)
+
+---
+
+## 🔍 Funcionalidade Extra: Pets Desaparecidos
+
+O PetLar também terá um módulo específico para auxiliar na busca de pets desaparecidos. O tutor poderá cadastrar:
+
+* Raça
+* Cor
+* Nome pelo qual o animal atende
+* Foto do pet
+* Descrição adicional (características marcantes, comportamento)
+* Local e data do desaparecimento
+* Dados de contato (telefone, e-mail)
+
+Essas informações ficarão **disponíveis publicamente** para todos os usuários, aumentando as chances de reencontro.
 
 ---
 
