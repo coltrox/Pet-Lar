@@ -51,29 +51,38 @@ O aplicativo apresentará sugestões de pets **de acordo com o local de moradia 
 
 ---
 
-## 📳 *Validação Presencial via Arduino*
+## ✅ *Sistema de Aprovação pelas ONGs*
 
-* No ponto de adoção, haverá um terminal com tecnologia Arduino e NFC (ou QR Code)
-* O adotante aproxima o celular e o sistema verifica seu cadastro
+* Cada solicitação de adoção ou cadastro de usuário com documentos passará por um processo de **validação manual feito pela ONG responsável** pelo animal ou ponto de adoção.
+* A ONG terá **autonomia total** para aprovar ou recusar:
+
+  * Documentos e dados do adotante
+  * Adoções realizadas pelo aplicativo
+* Essa validação garante que **a ONG continue com controle completo sobre o processo**, com segurança e responsabilidade.
+
+---
+
+## 📳 *Validação Presencial via Arduino + QR Code*
+
+* No ponto de adoção, haverá um terminal com tecnologia Arduino e **QR Code**
+* O adotante aproxima o celular ou escaneia o código e o sistema verifica seu cadastro
 * Caso aprovado, o sistema libera a retirada do pet
 
 ---
 
 ## 🔍 *Funcionalidade Extra: Pets Desaparecidos*
 
-Pensando também no bem-estar dos animais e no auxílio à comunidade, o *PetMatch* oferece um módulo específico para ajudar na busca de pets desaparecidos.
+O *PetMatch* também terá um módulo específico para auxiliar na busca de pets desaparecidos. O tutor poderá cadastrar:
 
-O tutor poderá cadastrar informações como:
+* Raça
+* Cor
+* Nome pelo qual o animal atende
+* Foto do pet
+* Descrição adicional (características marcantes, comportamento)
+* Local e data do desaparecimento
+* Dados de contato (telefone, e-mail)
 
-* **Raça**
-* **Cor**
-* **Nome pelo qual o animal atende**
-* **Foto do pet**
-* **Descrição adicional** (características marcantes, comportamento)
-* **Local e data do desaparecimento**
-* **Dados de contato** (telefone, e-mail)
-
-Essas informações ficarão disponíveis em uma **seção de "Desaparecidos"**, onde qualquer usuário pode acessar, visualizar os animais perdidos e, caso tenha informações, entrar diretamente em contato com os tutores.
+Essas informações ficarão disponíveis publicamente para todos os usuários, aumentando as chances de reencontro.
 
 ---
 
@@ -81,24 +90,24 @@ Essas informações ficarão disponíveis em uma **seção de "Desaparecidos"**,
 
 ### 🌐 *Desenvolvimento Web*
 
-* *Front-end:* HTML, CSS, JavaScript, React
-* *Back-end:* Java
+* **Front-end:** HTML, CSS, JavaScript, React
+* **Back-end:** Java
 
 ### 📱 *Desenvolvimento Mobile*
 
-* *React Native*
+* **React Native**
 
 ### 💾 *Banco de Dados*
 
-* *SQL* (MySQL)
+* **SQL** (MySQL)
 
 ### 🔌 *Sistemas Embarcados*
 
-* *Arduino + C* (para interação física nos pontos de adoção)
+* **Arduino + C** (para interação física com QR Code)
 
 ### 🎨 *Design*
 
-* Figma
+* **Figma**
 
 ---
 
@@ -110,7 +119,7 @@ Usuário
     ↳ API (Java)
       ↳ Banco de Dados (SQL)
 Ponto de Adoção
-  ↳ Dispositivo Arduino (NFC/QR)
+  ↳ Dispositivo Arduino (QR Code)
     ↳ Integração com API para validação
 ```
 
@@ -122,10 +131,11 @@ Ponto de Adoção
 * **RF02** – O sistema deve listar pets de acordo com o tipo de residência do usuário.
 * **RF03** – O usuário pode buscar locais de adoção e feiras na sua cidade.
 * **RF04** – O sistema deve permitir adoção online, vinculada ao local.
-* **RF05** – A confirmação da adoção deve ser feita por aproximação no ponto físico (Arduino).
+* **RF05** – A confirmação da adoção deve ser feita por aproximação no ponto físico (Arduino + QR Code).
 * **RF06** – O sistema deve aplicar um questionário de preferências ao usuário e, com base nos resultados, sugerir pets compatíveis por raça, porte e grau de atividade física.
 * **RF07** – O sistema deve permitir o cadastro de pets desaparecidos, com informações como raça, cor, nome pelo qual atende, foto, descrição e dados de contato do tutor.
 * **RF08** – O sistema deve disponibilizar uma seção pública com a listagem dos pets desaparecidos e os respectivos contatos dos tutores.
+* **RF09** – As ONGs terão acesso a um painel administrativo para aprovar ou recusar adoções e cadastros.
 
 ---
 
@@ -138,10 +148,23 @@ Ponto de Adoção
 
 ---
 
+## 🗣️ *Perguntas Feitas às ONGs Parceiras*
+
+Para garantir que o sistema PetMatch atenda às reais necessidades das ONGs, foram levantadas as seguintes questões:
+
+1. Como funciona o processo de adoção responsável na sua ONG ou em parcerias?
+2. Quais documentos costumam pedir de quem quer adotar um pet?
+3. Existe algum termo de responsabilidade que os adotantes precisam assinar?
+4. Quais critérios vocês consideram importantes para aprovar ou recusar uma adoção?
+5. Como organizam e mantêm os dados dos animais (vacinas, saúde, histórico)?
+6. Que informações são essenciais sobre o pet para divulgar em um app de adoção?
+7. Como vocês lidam com casos de pets desaparecidos?
+
+---
+
 ## 🤝 *Colaboradores*
 
 | Nome                  |
 | --------------------- |
 | Pedro Henrique Coltro |
 | Lucas D'ávila Martins |
-
