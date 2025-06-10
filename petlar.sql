@@ -1,6 +1,8 @@
-CREATE DATABASE PetMatch;
-USE PetMatch;
+-- Criação e uso do banco
+CREATE DATABASE PetLar;
+USE PetLar;
 
+-- Tabela de Usuários
 CREATE TABLE Usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -14,6 +16,7 @@ CREATE TABLE Usuario (
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Tabela de Locais de Adoção e Feiras
 CREATE TABLE LocalAdocao (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -27,6 +30,7 @@ CREATE TABLE LocalAdocao (
     descricao TEXT
 );
 
+-- Tabela de Pets disponíveis para adoção
 CREATE TABLE Pet (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50),
@@ -43,6 +47,7 @@ CREATE TABLE Pet (
     FOREIGN KEY (local_id) REFERENCES LocalAdocao(id)
 );
 
+-- Tabela de Adoções
 CREATE TABLE Adocao (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,
@@ -55,6 +60,7 @@ CREATE TABLE Adocao (
     FOREIGN KEY (local_id) REFERENCES LocalAdocao(id)
 );
 
+-- Tabela de Validações via Arduino no ponto de adoção
 CREATE TABLE ValidacaoArduino (
     id INT AUTO_INCREMENT PRIMARY KEY,
     adocao_id INT NOT NULL,
@@ -64,6 +70,7 @@ CREATE TABLE ValidacaoArduino (
     FOREIGN KEY (adocao_id) REFERENCES Adocao(id)
 );
 
+-- Tabela de Questionários preenchidos por usuários
 CREATE TABLE Questionario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,
@@ -71,11 +78,13 @@ CREATE TABLE Questionario (
     FOREIGN KEY (usuario_id) REFERENCES Usuario(id)
 );
 
+-- Tabela de Perguntas (estáticas)
 CREATE TABLE Pergunta (
     id INT AUTO_INCREMENT PRIMARY KEY,
     texto VARCHAR(200) NOT NULL
 );
 
+-- Tabela de Respostas aos questionários
 CREATE TABLE Resposta (
     id INT AUTO_INCREMENT PRIMARY KEY,
     questionario_id INT NOT NULL,
@@ -85,6 +94,7 @@ CREATE TABLE Resposta (
     FOREIGN KEY (pergunta_id) REFERENCES Pergunta(id)
 );
 
+-- Tabela de Pets Desaparecidos
 CREATE TABLE PetDesaparecido (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,
