@@ -16,6 +16,33 @@ O aplicativo apresentará sugestões de pets de acordo com o local de moradia do
 
 ---
 
+## 👤 Cadastro de Usuários
+
+Para solicitar a adoção de um pet, o usuário deverá realizar um cadastro completo na plataforma, fornecendo os seguintes dados:
+
+* Nome completo
+* RG
+* CPF
+* Número de telefone
+* E-mail
+* Comprovante de residência
+* Respostas ao **questionário de personalidade e estilo de vida**
+
+Após o envio dos dados, a ONG responsável pelo ponto de adoção realizará a análise e validação manual da documentação.
+
+> O sistema **permite que qualquer pessoa visualize os pets disponíveis para adoção**, mas somente usuários **com cadastro validado** poderão enviar uma **solicitação de adoção**.
+
+A validação pelas ONGs garante um processo de adoção consciente e seguro. Após a aprovação, o usuário passa a ter acesso à funcionalidade de **solicitação de adoção de animais** pelo aplicativo ou site.
+
+Além disso, com base nas respostas do questionário, o sistema apresentará sugestões de pets compatíveis com o perfil do adotante, utilizando critérios como:
+
+* Tipo de residência
+* Preferências comportamentais
+* Estilo de vida
+* Tempo disponível para cuidados com o pet
+
+---
+
 ## 🐶 Cadastro de Pets para Adoção
 
 Informações completas sobre cada animal:
