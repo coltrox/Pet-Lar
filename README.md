@@ -137,31 +137,6 @@ Essas informações ficarão **disponíveis publicamente** para todos os usuári
 
 ---
 
-## 🗣️ Perguntas Feitas às ONGs Parceiras
-
-* Como funciona o processo de adoção responsável na sua ONG ou em parcerias?
-* Quais documentos costumam pedir de quem quer adotar um pet?
-* Existe algum termo de responsabilidade que os adotantes precisam assinar?
-* Quais critérios vocês consideram importantes para aprovar ou recusar uma adoção?
-* Como organizam e mantêm os dados dos animais (vacinas, saúde, histórico)?
-* Que informações são essenciais sobre o pet para divulgar em um app de adoção?
-* Como vocês lidam com casos de pets desaparecidos?
-
----
-
-## 🐾 Perguntas Feitas à Veterinária
-
-* Quais documentos normalmente são exigidos para alguém adotar um pet de forma responsável?
-* É comum exigir comprovante de residência e documento com foto no processo de adoção?
-* Existe algum modelo padrão de termo de responsabilidade que os adotantes devem assinar?
-* O atestado de saúde do animal é obrigatório no momento da adoção? Quem costuma emitir esse documento?
-* Quais informações médicas básicas (vacinas, vermifugação, castração) devem constar no histórico entregue ao novo tutor?
-* Como é feita a atualização do prontuário de saúde de um animal em caso de adoção por meio de uma ONG ou feira?
-* Você acredita que a exigência de documentos e critérios rigorosos ajuda na redução de devoluções ou maus-tratos?
-* Existe alguma exigência legal ou orientação de conselhos veterinários sobre como documentar uma adoção de forma ética e segura?
-
----
-
 ## 🛠 Tecnologias Utilizadas
 
 ### 🌐 Desenvolvimento Web
@@ -224,6 +199,31 @@ ONG
 * **RNF02** – A autenticação dos usuários deve ser segura.
 * **RNF03** – As informações dos pets devem ser atualizadas em tempo real.
 * **RNF04** – O sistema Arduino deve ser robusto e suportar múltiplas conexões simultâneas.
+
+---
+
+## 🗣️ Perguntas Feitas às ONGs Parceiras
+
+* Como funciona o processo de adoção responsável na sua ONG ou em parcerias?
+* Quais documentos costumam pedir de quem quer adotar um pet?
+* Existe algum termo de responsabilidade que os adotantes precisam assinar?
+* Quais critérios vocês consideram importantes para aprovar ou recusar uma adoção?
+* Como organizam e mantêm os dados dos animais (vacinas, saúde, histórico)?
+* Que informações são essenciais sobre o pet para divulgar em um app de adoção?
+* Como vocês lidam com casos de pets desaparecidos?
+
+---
+
+## 🐾 Perguntas Feitas à Veterinária
+
+* Quais documentos normalmente são exigidos para alguém adotar um pet de forma responsável?
+* É comum exigir comprovante de residência e documento com foto no processo de adoção?
+* Existe algum modelo padrão de termo de responsabilidade que os adotantes devem assinar?
+* O atestado de saúde do animal é obrigatório no momento da adoção? Quem costuma emitir esse documento?
+* Quais informações médicas básicas (vacinas, vermifugação, castração) devem constar no histórico entregue ao novo tutor?
+* Como é feita a atualização do prontuário de saúde de um animal em caso de adoção por meio de uma ONG ou feira?
+* Você acredita que a exigência de documentos e critérios rigorosos ajuda na redução de devoluções ou maus-tratos?
+* Existe alguma exigência legal ou orientação de conselhos veterinários sobre como documentar uma adoção de forma ética e segura?
 
 ---
 
