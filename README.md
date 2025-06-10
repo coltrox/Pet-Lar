@@ -227,6 +227,80 @@ ONG
 
 ---
 
+## 📚 Conformidade Legal e Regras do Aplicativo
+
+Para garantir a segurança, privacidade e responsabilidade em todo o processo de adoção, o PetLar segue as principais legislações brasileiras e apresenta documentos obrigatórios aos usuários. Abaixo, listamos as leis aplicáveis e os termos que serão exigidos dentro do app e plataforma web:
+
+✅ Leis que o sistema segue
+
+📜 Lei Geral de Proteção de Dados Pessoais (LGPD – Lei nº 13.709/2018)
+
+Regula o uso, coleta, armazenamento e compartilhamento de dados pessoais.
+
+Exige consentimento explícito para uso dos dados.
+
+Os usuários têm direito de solicitar exclusão, correção ou portabilidade dos seus dados.
+
+📜 Marco Civil da Internet (Lei nº 12.965/2014)
+
+Garante privacidade, liberdade de expressão e proteção de dados.
+
+Reforça a necessidade de termos de uso claros e acessíveis.
+
+📜 Código de Defesa do Consumidor (Lei nº 8.078/1990)
+
+Garante transparência nas relações de consumo e prestação de serviços.
+
+Aplica-se especialmente a recursos pagos, doações e suporte.
+
+📜 Leis sobre Adoção e Bem-Estar Animal
+
+Lei de Crimes Ambientais (Lei nº 9.605/98 – Art. 32): Proíbe maus-tratos a animais.
+
+Leis estaduais/municipais que regem a posse responsável e regras para adoção.
+
+Resoluções do Conselho Federal de Medicina Veterinária (CFMV) quanto à saúde animal e castração.
+
+✍️ Documentos e Termos que o usuário deve aceitar
+
+📄 Termo de Uso
+
+Define as regras de uso do aplicativo e site.
+
+Inclui condições de cadastro, responsabilidades do usuário e limitações da plataforma.
+
+🔐 Política de Privacidade
+
+Explica como os dados são coletados, armazenados e utilizados.
+
+Informa sobre compartilhamento com ONGs e direitos dos usuários (acesso, exclusão, alteração).
+
+📝 Termo de Responsabilidade para Adoção
+
+Documento digital assinado pelo usuário no momento da solicitação de adoção.
+
+Contém compromissos com o bem-estar animal e regras da posse responsável.
+
+🧠 Boas Práticas Adicionais
+
+Consentimento explícito em todas as etapas sensíveis (envio de documentos, solicitações de adoção).
+
+Validação da maioridade (maiores de 18 anos).
+
+Aviso de que as sugestões do sistema são indicativas e não garantem compatibilidade perfeita.
+
+Logs e auditorias dos acessos das ONGs para garantir transparência.
+
+✅ Tela de Consentimento no Cadastro
+
+O app solicitará o aceite dos seguintes itens:
+
+
+
+Essas medidas garantem que a experiência de adoção via PetLar seja segura, ética e legalmente responsável.
+
+---
+
 ## 🤝 Colaboradores
 
 * **Pedro Henrique Coltro**
