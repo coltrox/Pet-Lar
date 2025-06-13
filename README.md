@@ -214,19 +214,6 @@ ONG
 
 ---
 
-## 🐾 Perguntas Feitas à Veterinária
-
-* Quais documentos normalmente são exigidos para alguém adotar um pet de forma responsável?
-* É comum exigir comprovante de residência e documento com foto no processo de adoção?
-* Existe algum modelo padrão de termo de responsabilidade que os adotantes devem assinar?
-* O atestado de saúde do animal é obrigatório no momento da adoção? Quem costuma emitir esse documento?
-* Quais informações médicas básicas (vacinas, vermifugação, castração) devem constar no histórico entregue ao novo tutor?
-* Como é feita a atualização do prontuário de saúde de um animal em caso de adoção por meio de uma ONG ou feira?
-* Você acredita que a exigência de documentos e critérios rigorosos ajuda na redução de devoluções ou maus-tratos?
-* Existe alguma exigência legal ou orientação de conselhos veterinários sobre como documentar uma adoção de forma ética e segura?
-
----
-
 ## 📚 Conformidade Legal e Regras do Aplicativo
 
 Para garantir a segurança, privacidade e responsabilidade em todo o processo de adoção, o **PetLar** segue as principais legislações brasileiras e apresenta documentos obrigatórios aos usuários. Abaixo estão listadas as leis aplicáveis e os termos que serão exigidos dentro do app e da plataforma web:
