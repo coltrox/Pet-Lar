@@ -282,3 +282,4 @@ Essas medidas garantem que a experiência de adoção via **PetLar** seja **segu
 * **Pedro Henrique Coltro**
 * **Lucas D'ávila Martins**
 * **Mylenna Heloisa Ponciano**
+* **Matheus Silva Berozzi**
