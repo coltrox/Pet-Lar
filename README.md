@@ -202,18 +202,6 @@ ONG
 
 ---
 
-## 🗣️ Perguntas Feitas às ONGs Parceiras
-
-* Como funciona o processo de adoção responsável na sua ONG ou em parcerias?
-* Quais documentos costumam pedir de quem quer adotar um pet?
-* Existe algum termo de responsabilidade que os adotantes precisam assinar?
-* Quais critérios vocês consideram importantes para aprovar ou recusar uma adoção?
-* Como organizam e mantêm os dados dos animais (vacinas, saúde, histórico)?
-* Que informações são essenciais sobre o pet para divulgar em um app de adoção?
-* Como vocês lidam com casos de pets desaparecidos?
-
----
-
 ## 📚 Conformidade Legal e Regras do Aplicativo
 
 Para garantir a segurança, privacidade e responsabilidade em todo o processo de adoção, o **PetLar** segue as principais legislações brasileiras e apresenta documentos obrigatórios aos usuários. Abaixo estão listadas as leis aplicáveis e os termos que serão exigidos dentro do app e da plataforma web:
