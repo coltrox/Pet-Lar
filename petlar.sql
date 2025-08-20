@@ -1,114 +1,106 @@
--- Criação e uso do banco
-CREATE DATABASE PetLar;
-USE PetLar;
+CREATE TABLE Endereco (
+    id_endereco INT PRIMARY KEY AUTO_INCREMENT,
+    rua VARCHAR(100),
+    numero VARCHAR(10),
+    complemento VARCHAR(50),
+    bairro VARCHAR(50),
+    cidade VARCHAR(50),
+    estado VARCHAR(2)
+);
 
--- Tabela de Usuários
 CREATE TABLE Usuario (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    cpf CHAR(11) UNIQUE NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
+    id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    nome_completo VARCHAR(100),
+    cpf CHAR(11) UNIQUE,
+    data_nascimento DATE,
+    email VARCHAR(100) UNIQUE,
+    id_endereco INT,
+    FOREIGN KEY (id_endereco) REFERENCES Endereco(id_endereco)
+);
+
+CREATE TABLE Ong (
+    id_ong INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    id_endereco INT,
     telefone VARCHAR(20),
-    endereco VARCHAR(200) NOT NULL,
-    tipo_residencia ENUM('Apartamento', 'Casa Pequena', 'Casa Grande') NOT NULL,
-    senha VARCHAR(255) NOT NULL,
-    documento_validado BOOLEAN DEFAULT FALSE,
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    email VARCHAR(100) UNIQUE,
+    site VARCHAR(100),
+    FOREIGN KEY (id_endereco) REFERENCES Endereco(id_endereco)
 );
 
--- Tabela de Locais de Adoção e Feiras
-CREATE TABLE LocalAdocao (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    endereco VARCHAR(200) NOT NULL,
-    cidade VARCHAR(100) NOT NULL,
-    estado CHAR(2) NOT NULL,
-    tipo ENUM('Ponto Fixo', 'Feira') NOT NULL,
-    data_inicio DATE,
-    data_fim DATE,
-    horario_funcionamento VARCHAR(100),
-    descricao TEXT
+CREATE TABLE Raca (
+    id_raca INT PRIMARY KEY AUTO_INCREMENT,
+    raca VARCHAR(50)
 );
 
--- Tabela de Pets disponíveis para adoção
+CREATE TABLE Origem (
+    id_origem INT PRIMARY KEY AUTO_INCREMENT,
+    descricao ENUM('resgatado', 'criado', 'doado')
+);
+
 CREATE TABLE Pet (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(50),
-    raca VARCHAR(50) NOT NULL,
-    porte ENUM('Pequeno', 'Médio', 'Grande') NOT NULL,
-    perfil_comportamental ENUM('Ativo', 'Calmo', 'Independente', 'Sociável') NOT NULL,
-    grau_atividade ENUM('Baixo', 'Moderado', 'Alto') NOT NULL,
-    alimentacao VARCHAR(200),
-    cuidados_especiais VARCHAR(200),
-    descricao TEXT,
-    foto VARCHAR(255),
-    local_id INT,
-    disponivel BOOLEAN DEFAULT TRUE,
-    FOREIGN KEY (local_id) REFERENCES LocalAdocao(id)
+    id_pet INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    id_raca INT,
+    data_nascimento DATE,
+    sexo ENUM('M', 'F'),
+    id_origem INT,
+    id_ong INT,
+    FOREIGN KEY (id_raca) REFERENCES Raca(id_raca),
+    FOREIGN KEY (id_origem) REFERENCES Origem(id_origem),
+    FOREIGN KEY (id_ong) REFERENCES Ong(id_ong)
 );
 
--- Tabela de Adoções
+CREATE TABLE Vacinas (
+    id_vacina INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100)
+);
+
+CREATE TABLE Carteira_Vacinacao (
+    id_carteira INT PRIMARY KEY AUTO_INCREMENT,
+    id_pet INT,
+    id_vacina INT,
+    data_aplicacao DATE,
+    FOREIGN KEY (id_pet) REFERENCES Pet(id_pet),
+    FOREIGN KEY (id_vacina) REFERENCES Vacinas(id_vacina)
+);
+
+CREATE TABLE Status (
+    id_status INT PRIMARY KEY AUTO_INCREMENT,
+    descricao ENUM('aprovado', 'recusado', 'pendente')
+);
+
+CREATE TABLE Solicitacao_Adocao (
+    id_solicitacao INT PRIMARY KEY AUTO_INCREMENT,
+    id_usuario INT,
+    id_pet INT,
+    id_ong INT,
+    data DATE,
+    id_status INT,
+    observacao TEXT,
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
+    FOREIGN KEY (id_pet) REFERENCES Pet(id_pet),
+    FOREIGN KEY (id_ong) REFERENCES Ong(id_ong),
+    FOREIGN KEY (id_status) REFERENCES Status(id_status)
+);
+
 CREATE TABLE Adocao (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INT NOT NULL,
-    pet_id INT NOT NULL,
-    local_id INT NOT NULL,
-    data_solicitacao DATE DEFAULT CURRENT_DATE,
-    status ENUM('Pendente', 'Aprovada', 'Recusada') DEFAULT 'Pendente',
-    FOREIGN KEY (usuario_id) REFERENCES Usuario(id),
-    FOREIGN KEY (pet_id) REFERENCES Pet(id),
-    FOREIGN KEY (local_id) REFERENCES LocalAdocao(id)
+    id_adocao INT PRIMARY KEY AUTO_INCREMENT,
+    id_solicitacao INT,
+    data_adocao DATE,
+    FOREIGN KEY (id_solicitacao) REFERENCES Solicitacao_Adocao(id_solicitacao)
 );
 
--- Tabela de Validações via Arduino no ponto de adoção
-CREATE TABLE ValidacaoArduino (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    adocao_id INT NOT NULL,
-    data_validacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    metodo ENUM('NFC', 'QR') NOT NULL,
-    validado BOOLEAN DEFAULT FALSE,
-    FOREIGN KEY (adocao_id) REFERENCES Adocao(id)
+CREATE TABLE Formulario (
+    id_formulario INT PRIMARY KEY AUTO_INCREMENT,
+    perguntas_respostas TEXT
 );
 
--- Tabela de Questionários preenchidos por usuários
-CREATE TABLE Questionario (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INT NOT NULL,
-    data_resposta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (usuario_id) REFERENCES Usuario(id)
-);
-
--- Tabela de Perguntas (estáticas)
-CREATE TABLE Pergunta (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    texto VARCHAR(200) NOT NULL
-);
-
--- Tabela de Respostas aos questionários
-CREATE TABLE Resposta (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    questionario_id INT NOT NULL,
-    pergunta_id INT NOT NULL,
-    resposta TEXT NOT NULL,
-    FOREIGN KEY (questionario_id) REFERENCES Questionario(id),
-    FOREIGN KEY (pergunta_id) REFERENCES Pergunta(id)
-);
-
--- Tabela de Pets Desaparecidos
-CREATE TABLE PetDesaparecido (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INT NOT NULL,
-    nome_pet VARCHAR(50),
-    raca VARCHAR(50),
-    cor VARCHAR(50),
-    descricao TEXT,
-    foto VARCHAR(255),
-    data_desaparecimento DATE NOT NULL,
-    local_desaparecimento VARCHAR(200) NOT NULL,
-    tipo_local ENUM('Residência', 'Rua', 'Parque', 'Praia', 'Outro') NOT NULL,
-    telefone_contato VARCHAR(20) NOT NULL,
-    email_contato VARCHAR(100) NOT NULL,
-    encontrado BOOLEAN DEFAULT FALSE,
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (usuario_id) REFERENCES Usuario(id)
+CREATE TABLE Usuario_Formulario (
+    id_usuario INT,
+    id_formulario INT,
+    data DATE,
+    PRIMARY KEY (id_usuario, id_formulario),
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
+    FOREIGN KEY (id_formulario) REFERENCES Formulario(id_formulario)
 );
