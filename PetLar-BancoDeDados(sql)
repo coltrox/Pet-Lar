@@ -1,7 +1,12 @@
+-- ============================
+-- Criar o banco de dados
+-- ============================
 CREATE DATABASE IF NOT EXISTS PetLar;
 USE PetLar;
 
-
+-- ============================
+-- Tabela de Endereços
+-- ============================
 CREATE TABLE Endereco (
     id_endereco INT AUTO_INCREMENT PRIMARY KEY,
     rua VARCHAR(100) NOT NULL,
@@ -12,7 +17,9 @@ CREATE TABLE Endereco (
     estado CHAR(2) NOT NULL
 );
 
-
+-- ============================
+-- Tabela de Usuários
+-- ============================
 CREATE TABLE Usuario (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nome_completo VARCHAR(100) NOT NULL,
@@ -23,7 +30,9 @@ CREATE TABLE Usuario (
     FOREIGN KEY (id_endereco) REFERENCES Endereco(id_endereco)
 );
 
-
+-- ============================
+-- Tabela de Formulário
+-- ============================
 CREATE TABLE Formulario (
     id_formulario INT AUTO_INCREMENT PRIMARY KEY,
     respostas TEXT NOT NULL
@@ -37,7 +46,9 @@ CREATE TABLE Usuario_Formulario (
     FOREIGN KEY (id_formulario) REFERENCES Formulario(id_formulario)
 );
 
-
+-- ============================
+-- Tabela de ONGs
+-- ============================
 CREATE TABLE ONG (
     id_ong INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -45,14 +56,18 @@ CREATE TABLE ONG (
     FOREIGN KEY (id_endereco) REFERENCES Endereco(id_endereco)
 );
 
-
+-- ============================
+-- Carteira de Vacinação (uma por pet)
+-- ============================
 CREATE TABLE Carteira_Vacinacao (
     id_carteira INT AUTO_INCREMENT PRIMARY KEY,
     id_pet INT NOT NULL,
     FOREIGN KEY (id_pet) REFERENCES Pet(id_pet)
 );
 
-
+-- ============================
+-- Vacinas (uma ou várias por carteira)
+-- ============================
 CREATE TABLE Vacina (
     id_vacina INT AUTO_INCREMENT PRIMARY KEY,
     id_carteira INT NOT NULL,
@@ -61,7 +76,9 @@ CREATE TABLE Vacina (
     FOREIGN KEY (id_carteira) REFERENCES Carteira_Vacinacao(id_carteira)
 );
 
-
+-- ============================
+-- Pets (cada pet tem uma carteira obrigatória)
+-- ============================
 CREATE TABLE Pet (
     id_pet INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
@@ -76,7 +93,9 @@ CREATE TABLE Pet (
     FOREIGN KEY (id_carteira) REFERENCES Carteira_Vacinacao(id_carteira)
 );
 
-
+-- ============================
+-- Solicitações de Adoção
+-- ============================
 CREATE TABLE Solicitacao_Adocao (
     id_solicitacao INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT NOT NULL,
@@ -90,7 +109,9 @@ CREATE TABLE Solicitacao_Adocao (
     FOREIGN KEY (id_ong) REFERENCES ONG(id_ong)
 );
 
-
+-- ============================
+-- Adoções (criada quando aprovado)
+-- ============================
 CREATE TABLE Adocao (
     id_adocao INT AUTO_INCREMENT PRIMARY KEY,
     id_solicitacao INT NOT NULL UNIQUE,
@@ -98,7 +119,9 @@ CREATE TABLE Adocao (
     FOREIGN KEY (id_solicitacao) REFERENCES Solicitacao_Adocao(id_solicitacao)
 );
 
-
+-- ============================
+-- Trigger: cria adoção automaticamente
+-- ============================
 DELIMITER //
 CREATE TRIGGER trg_criar_adocao
 AFTER UPDATE ON Solicitacao_Adocao
@@ -112,9 +135,9 @@ END;
 //
 DELIMITER ;
 
-
+-- ============================
 -- Exemplos de INSERTs (20+ registros com FK)
-
+-- ============================
 
 -- Endereços
 INSERT INTO Endereco (rua, numero, complemento, bairro, cidade, estado) VALUES
