@@ -1,12 +1,6 @@
--- ============================
--- Criar o banco de dados
--- ============================
 CREATE DATABASE IF NOT EXISTS PetLar;
 USE PetLar;
 
--- ============================
--- Tabela de Endereços
--- ============================
 CREATE TABLE Endereco (
     id_endereco INT AUTO_INCREMENT PRIMARY KEY,
     rua VARCHAR(100) NOT NULL,
@@ -17,9 +11,6 @@ CREATE TABLE Endereco (
     estado CHAR(2) NOT NULL
 );
 
--- ============================
--- Tabela de Usuários
--- ============================
 CREATE TABLE Usuario (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nome_completo VARCHAR(100) NOT NULL,
@@ -30,9 +21,6 @@ CREATE TABLE Usuario (
     FOREIGN KEY (id_endereco) REFERENCES Endereco(id_endereco)
 );
 
--- ============================
--- Tabela de Formulário
--- ============================
 CREATE TABLE Formulario (
     id_formulario INT AUTO_INCREMENT PRIMARY KEY,
     respostas TEXT NOT NULL
@@ -46,9 +34,6 @@ CREATE TABLE Usuario_Formulario (
     FOREIGN KEY (id_formulario) REFERENCES Formulario(id_formulario)
 );
 
--- ============================
--- Tabela de ONGs
--- ============================
 CREATE TABLE ONG (
     id_ong INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -56,29 +41,6 @@ CREATE TABLE ONG (
     FOREIGN KEY (id_endereco) REFERENCES Endereco(id_endereco)
 );
 
--- ============================
--- Carteira de Vacinação (uma por pet)
--- ============================
-CREATE TABLE Carteira_Vacinacao (
-    id_carteira INT AUTO_INCREMENT PRIMARY KEY,
-    id_pet INT NOT NULL,
-    FOREIGN KEY (id_pet) REFERENCES Pet(id_pet)
-);
-
--- ============================
--- Vacinas (uma ou várias por carteira)
--- ============================
-CREATE TABLE Vacina (
-    id_vacina INT AUTO_INCREMENT PRIMARY KEY,
-    id_carteira INT NOT NULL,
-    nome_vacina VARCHAR(100) NOT NULL,
-    data_aplicacao DATE NOT NULL,
-    FOREIGN KEY (id_carteira) REFERENCES Carteira_Vacinacao(id_carteira)
-);
-
--- ============================
--- Pets (cada pet tem uma carteira obrigatória)
--- ============================
 CREATE TABLE Pet (
     id_pet INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
@@ -88,14 +50,23 @@ CREATE TABLE Pet (
     sexo ENUM('Macho', 'Fêmea') NOT NULL,
     origem ENUM('Resgatado', 'Nascido na ONG', 'Doado') NOT NULL,
     id_ong INT NOT NULL,
-    id_carteira INT UNIQUE,
-    FOREIGN KEY (id_ong) REFERENCES ONG(id_ong),
+    FOREIGN KEY (id_ong) REFERENCES ONG(id_ong)
+);
+
+CREATE TABLE Carteira_Vacinacao (
+    id_carteira INT AUTO_INCREMENT PRIMARY KEY,
+    id_pet INT UNIQUE NOT NULL,
+    FOREIGN KEY (id_pet) REFERENCES Pet(id_pet)
+);
+
+CREATE TABLE Vacina (
+    id_vacina INT AUTO_INCREMENT PRIMARY KEY,
+    id_carteira INT NOT NULL,
+    nome_vacina VARCHAR(100) NOT NULL,
+    data_aplicacao DATE NOT NULL,
     FOREIGN KEY (id_carteira) REFERENCES Carteira_Vacinacao(id_carteira)
 );
 
--- ============================
--- Solicitações de Adoção
--- ============================
 CREATE TABLE Solicitacao_Adocao (
     id_solicitacao INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT NOT NULL,
@@ -109,9 +80,6 @@ CREATE TABLE Solicitacao_Adocao (
     FOREIGN KEY (id_ong) REFERENCES ONG(id_ong)
 );
 
--- ============================
--- Adoções (criada quando aprovado)
--- ============================
 CREATE TABLE Adocao (
     id_adocao INT AUTO_INCREMENT PRIMARY KEY,
     id_solicitacao INT NOT NULL UNIQUE,
@@ -119,9 +87,6 @@ CREATE TABLE Adocao (
     FOREIGN KEY (id_solicitacao) REFERENCES Solicitacao_Adocao(id_solicitacao)
 );
 
--- ============================
--- Trigger: cria adoção automaticamente
--- ============================
 DELIMITER //
 CREATE TRIGGER trg_criar_adocao
 AFTER UPDATE ON Solicitacao_Adocao
@@ -135,58 +100,70 @@ END;
 //
 DELIMITER ;
 
--- ============================
--- Exemplos de INSERTs (20+ registros com FK)
--- ============================
 
--- Endereços
+
+-------cria a databse depois coloca os inserts-------------
+
+
 INSERT INTO Endereco (rua, numero, complemento, bairro, cidade, estado) VALUES
 ('Rua A', '100', NULL, 'Centro', 'São Paulo', 'SP'),
 ('Rua B', '200', 'Apto 12', 'Jardim', 'Rio de Janeiro', 'RJ'),
-('Rua C', '300', NULL, 'Bairro 1', 'Belo Horizonte', 'MG'),
-('Rua D', '400', NULL, 'Bairro 2', 'Curitiba', 'PR'),
-('Rua E', '500', 'Casa', 'Bairro 3', 'Porto Alegre', 'RS');
+('Rua C', '300', NULL, 'Savassi', 'Belo Horizonte', 'MG'),
+('Rua D', '400', NULL, 'Batel', 'Curitiba', 'PR'),
+('Rua E', '500', 'Casa', 'Moinhos', 'Porto Alegre', 'RS'),
+('Rua F', '600', NULL, 'Vila Nova', 'Florianópolis', 'SC'),
+('Rua G', '700', 'Apto 21', 'Centro', 'Fortaleza', 'CE'),
+('Rua H', '800', NULL, 'Bairro Alto', 'Porto Seguro', 'BA'),
+('Rua I', '900', NULL, 'Jardim América', 'Campinas', 'SP'),
+('Rua J', '1000', 'Casa', 'Centro', 'Belo Horizonte', 'MG');
 
--- Usuários
 INSERT INTO Usuario (nome_completo, cpf, data_nascimento, email, id_endereco) VALUES
 ('Ana Silva','12345678901','1990-05-10','ana@email.com',1),
 ('João Pereira','23456789012','1985-09-23','joao@email.com',2),
 ('Maria Souza','34567890123','1992-03-14','maria@email.com',3),
 ('Carlos Lima','45678901234','1988-12-30','carlos@email.com',4),
-('Fernanda Costa','56789012345','1995-07-07','fernanda@email.com',5);
+('Fernanda Costa','56789012345','1995-07-07','fernanda@email.com',5),
+('Bruno Santos','56789012346','1987-04-12','bruno@email.com',6),
+('Patrícia Almeida','67890123457','1993-11-05','patricia@email.com',7),
+('Ricardo Fernandes','78901234568','1982-08-19','ricardo@email.com',8),
+('Juliana Ribeiro','89012345679','1994-02-28','juliana@email.com',9),
+('Lucas Oliveira','90123456780','1991-06-15','lucas@email.com',10);
 
--- Formulários
 INSERT INTO Formulario (respostas) VALUES
-('Respostas 1'),('Respostas 2'),('Respostas 3'),('Respostas 4'),('Respostas 5');
+('Respostas 1'),('Respostas 2'),('Respostas 3'),('Respostas 4'),('Respostas 5'),
+('Respostas 6'),('Respostas 7'),('Respostas 8'),('Respostas 9'),('Respostas 10');
 
--- Usuario_Formulario
 INSERT INTO Usuario_Formulario (id_usuario, id_formulario) VALUES
-(1,1),(1,2),(2,3),(3,4),(4,5);
+(1,1),(1,2),(2,3),(3,4),(4,5),
+(5,6),(6,7),(7,8),(8,9),(9,10);
 
--- ONGs
 INSERT INTO ONG (nome, id_endereco) VALUES
-('PetLar SP',1),('Amigos dos Animais RJ',2),('Cão Feliz BH',3),('Vida Animal Curitiba',4),('Lar dos Pets RS',5);
+('PetLar SP',1),
+('Amigos dos Animais RJ',2),
+('Cão Feliz BH',3),
+('Vida Animal Curitiba',4),
+('Lar dos Pets RS',5),
+('SOS Animais SC',6),
+('Adoção Feliz CE',7),
+('Bicho Amigo BA',8),
+('Pet Amigo Campinas',9),
+('Lar Animal BH',10);
 
--- Pets
 INSERT INTO Pet (nome, especie, raca, data_nascimento, sexo, origem, id_ong) VALUES
 ('Rex','Cachorro','Vira-lata','2021-03-10','Macho','Resgatado',1),
 ('Bob','Cachorro','Labrador','2020-11-20','Macho','Doado',2),
 ('Thor','Cachorro','Beagle','2019-05-22','Macho','Resgatado',3),
 ('Max','Cachorro','Bulldog','2021-06-10','Macho','Doado',4),
-('Spike','Cachorro','Pastor Alemão','2022-01-15','Macho','Resgatado',5);
+('Spike','Cachorro','Pastor Alemão','2022-01-15','Macho','Resgatado',5),
+('Toby','Cachorro','Poodle','2020-09-09','Macho','Doado',6),
+('Loki','Cachorro','Shih Tzu','2021-12-01','Macho','Resgatado',7),
+('Simba','Cachorro','Golden Retriever','2019-04-18','Macho','Doado',8),
+('Zeus','Cachorro','Boxer','2022-03-22','Macho','Resgatado',9),
+('Oliver','Cachorro','Husky Siberiano','2021-08-30','Macho','Doado',10);
 
--- Carteiras de Vacinação (uma por pet)
 INSERT INTO Carteira_Vacinacao (id_pet) VALUES
-(1),(2),(3),(4),(5);
+(1),(2),(3),(4),(5),(6),(7),(8),(9),(10);
 
--- Atualizar pets para vincular à carteira
-UPDATE Pet SET id_carteira = 1 WHERE id_pet = 1;
-UPDATE Pet SET id_carteira = 2 WHERE id_pet = 2;
-UPDATE Pet SET id_carteira = 3 WHERE id_pet = 3;
-UPDATE Pet SET id_carteira = 4 WHERE id_pet = 4;
-UPDATE Pet SET id_carteira = 5 WHERE id_pet = 5;
-
--- Vacinas (várias por carteira)
 INSERT INTO Vacina (id_carteira, nome_vacina, data_aplicacao) VALUES
 (1,'Antirrábica','2023-01-15'),
 (1,'V8','2023-02-20'),
@@ -195,4 +172,25 @@ INSERT INTO Vacina (id_carteira, nome_vacina, data_aplicacao) VALUES
 (3,'V8','2023-05-05'),
 (3,'V10','2023-06-10'),
 (4,'Antirrábica','2023-07-12'),
-(5,'V8','2023-08-18');
+(5,'V8','2023-08-18'),
+(5,'V10','2023-09-20'),
+(6,'Antirrábica','2023-03-15'),
+(6,'V10','2023-04-10'),
+(7,'V8','2023-05-25'),
+(7,'Antirrábica','2023-06-30'),
+(8,'V10','2023-07-05'),
+(8,'V8','2023-08-01'),
+(9,'Antirrábica','2023-09-12'),
+(10,'V8','2023-10-10');
+
+INSERT INTO Solicitacao_Adocao (id_usuario, id_pet, id_ong, status, observacao) VALUES
+(1,1,1,'Pendente','Interesse no Rex'),
+(2,2,2,'Aprovado','Usuário aprovado'),
+(3,3,3,'Recusado','Residência não aprovada'),
+(4,4,4,'Pendente','Aguardando resposta'),
+(5,5,5,'Aprovado','Histórico positivo'),
+(6,6,6,'Pendente','Interesse no Toby'),
+(7,7,7,'Aprovado','Usuário apto'),
+(8,8,8,'Recusado','Condições não atendidas'),
+(9,9,9,'Pendente','Interesse no Zeus'),
+(10,10,10,'Aprovado','Histórico confirmado');
