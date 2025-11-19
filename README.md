@@ -269,7 +269,3 @@ Essas medidas garantem que a experiência de adoção via **PetLar** seja **segu
 
 * **Pedro Henrique Coltro**
 * **Lucas D'ávila Martins**
-
-Solicitacao_Adocao → Usuario, Pet, ONG: N:1 para cada
-
-Adocao → Solicitacao_Adocao: 1:
