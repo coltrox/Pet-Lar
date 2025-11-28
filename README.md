@@ -42,7 +42,7 @@ O "cérebro" do sistema utiliza fluxos de automação (**n8n**) integrados a Age
 2.  **Processamento Semântico (Agente de IA)**
     * O sistema não faz apenas um filtro de "Sim/Não".
     * O Agente analisa o contexto.
-        * *Exemplo:* "Usuário mora em apartamento pequeno" + "Corre 10km todo dia" = **Compatível** com cães de energia média/alta.
+        * *Exemplo:* "Usuário mora em apartamento pequeno" + "Corre 5km todo dia" = **Compatível** com cães de energia média/alta.
 
 3.  **Recomendação e Score**
     * O sistema gera um **Score de Compatibilidade**.
