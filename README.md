@@ -1,271 +1,201 @@
-# 🐾 PetLar - Sistema de Adoção Consciente de Animais
+Aqui está o arquivo **README.md** completo. É só copiar e colar no seu projeto.
 
-📱💻 **Projeto de TCC**
+````markdown
+# 🐾 PetLar - Sistema de Adoção Consciente e Inteligente
 
-O **PetLar** é um aplicativo completo que promove a adoção consciente de pets, integrando tecnologias de desenvolvimento **web**, **mobile**, **banco de dados**, **design de interfaces** e **sistemas embarcados (Arduino)**. O objetivo é conectar pessoas interessadas em adotar animais de forma responsável, levando em consideração o tamanho do pet e o espaço físico disponível na residência do adotante.
+![Project Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
+![License](https://img.shields.io/badge/License-MIT-blue)
+![Stack](https://img.shields.io/badge/Tech-FullStack_JS-green)
 
-Além da principal funcionalidade, que é a adoção personalizada, o sistema também oferece um módulo dedicado à **busca de animais desaparecidos**, facilitando o reencontro de tutores com seus pets.
-
----
-
-## 🎯 Objetivo do Projeto
-
-Garantir que os animais sejam adotados por famílias preparadas para recebê-los, respeitando critérios como tipo de residência (apartamento, casa pequena, casa grande) e perfil do pet (porte, grau de atividade física, necessidades específicas).
-
-O aplicativo apresentará sugestões de pets de acordo com o local de moradia do usuário e com os resultados de um **questionário personalizado** sobre gostos, estilo de vida e preferências comportamentais. A partir dessas informações, o sistema recomendará animais por raça, porte e grau de necessidade física, garantindo uma melhor compatibilidade entre o pet e seu futuro tutor.
+> **Projeto de TCC (Trabalho de Conclusão de Curso)**
+> *Conectando corações peludos a lares preparados através de tecnologia, dados e inteligência artificial.*
 
 ---
 
-## 👤 Cadastro de Usuários
+## 📖 Sobre o Projeto
 
-Para solicitar a adoção de um pet, o usuário deverá realizar um cadastro completo na plataforma, fornecendo os seguintes dados:
+O **PetLar** é um ecossistema multiplataforma (Mobile e Web) que visa revolucionar a adoção de animais, mitigando o problema da devolução de pets. Diferente de plataformas comuns que funcionam apenas como vitrines, o PetLar atua como um **sistema de suporte à decisão**.
 
-* Nome completo
-* RG
-* CPF
-* Número de telefone
-* E-mail
-* Comprovante de residência
-* Respostas ao **questionário de personalidade e estilo de vida**
+Utilizando **Inteligência Artificial** e fluxos de automação, o sistema analisa o perfil comportamental do adotante e sugere a compatibilidade com os animais disponíveis. Além disso, introduzimos a **Identidade Digital (Smart Tags)**, modernizando o acompanhamento da saúde animal pós-adoção.
 
-Após o envio dos dados, a ONG responsável pelo ponto de adoção realizará a análise e validação manual da documentação.
+### 🎯 O Grande Diferencial: "Match" via IA
+O sistema não apenas lista animais. Ele utiliza agentes de IA para cruzar dados subjetivos (rotina, tamanho da casa, nível de energia do tutor) com as necessidades etológicas do animal.
 
-> O sistema **permite que qualquer pessoa visualize os pets disponíveis para adoção**, mas somente usuários **com cadastro validado** poderão enviar uma **solicitação de adoção**.
-
-A validação pelas ONGs garante um processo de adoção consciente e seguro. Após a aprovação, o usuário passa a ter acesso à funcionalidade de **solicitação de adoção de animais** pelo aplicativo ou site.
-
-Além disso, com base nas respostas do questionário, o sistema apresentará sugestões de pets compatíveis com o perfil do adotante, utilizando critérios como:
-
-* Tipo de residência
-* Preferências comportamentais
-* Estilo de vida
-* Tempo disponível para cuidados com o pet
+> **⚠️ Nota Importante:** A IA atua como um *filtro qualificado* para auxiliar as ONGs. Ela recomenda, mas não decide. A decisão final de aprovação da adoção permanece **100% humana e manual** por parte da instituição responsável.
 
 ---
 
-## 🐶 Cadastro de Pets para Adoção
+## 🚀 Funcionalidades Principais
 
-Informações completas sobre cada animal:
+### 📱 Aplicativo Mobile (Para Adotantes)
+* **Cadastro Completo:** Upload de documentos e validação de identidade.
+* **Quiz de Lifestyle:** Formulário interativo sobre rotina, moradia e preferências.
+* **Feed Inteligente:** Listagem de pets ordenada por "Score de Compatibilidade" gerado pela IA.
+* **Solicitação de Adoção:** Envio de interesse com "Dossiê do Adotante" automático para a ONG.
+* **Smart Tag Reader:** Leitor de QR Code/NFC integrado para acessar a carteira de vacinação digital de qualquer pet cadastrado.
+* **Mural de Desaparecidos:** Cadastro e busca colaborativa de pets perdidos.
 
-* **Raça**
-* **Porte** (Pequeno, Médio, Grande)
-* **Perfil comportamental** (ativo, calmo, independente, sociável)
-* **Necessidades específicas:**
-
-  * Grau de atividade física (necessidade diária de exercícios e brincadeiras)
-  * Alimentação recomendada
-  * Cuidados especiais
-
----
-
-## 📍 Locais de Adoção e Feiras
-
-Listagem dos pontos de adoção ativos e feiras de pets.
-
-Cada local possui:
-
-* Endereço
-* Datas e horários de funcionamento
-* Lista de pets disponíveis no local com fotos e descrições
+### 💻 Painel Web (Para ONGs e Protetores)
+* **Dashboard Administrativo:** Visão geral de adoções e pets cadastrados.
+* **Gestão de Solicitações:** Recebimento de pedidos com análise prévia da IA (ex: *"Candidato compatível, mas atenção ao tempo livre"*).
+* **Prontuário Digital:** Edição do histórico de vacinas e saúde vinculado à Smart Tag do animal.
+* **Fluxo de Aprovação:** Ferramentas para aprovar (transferir posse digital) ou recusar (com feedback) as adoções.
 
 ---
 
-## 🛒 Adoção Online
+## 🧠 Como Funciona a Inteligência do Sistema
 
-O usuário, após ter seu cadastro validado, poderá:
-
-* Escolher um pet disponível no local desejado
-* Realizar a solicitação de adoção online
-
----
-
-## ✅ Sistema de Aprovação pelas ONGs
-
-Cada solicitação de adoção ou cadastro de usuário com documentos passará por um processo de **validação manual feito pela ONG** responsável pelo animal ou ponto de adoção.
-
-A ONG terá autonomia total para aprovar ou recusar:
-
-* Documentos e dados do adotante
-* Adoções realizadas pelo aplicativo
-
-Essa validação garante que a ONG continue com **controle completo sobre o processo**, com segurança e responsabilidade.
+1.  **Coleta de Dados:** O usuário responde ao formulário de perfil no App.
+2.  **Processamento (n8n):** O workflow automatizado coleta essas respostas e as envia para um **Agente de IA**.
+3.  **Análise Semântica:** O Agente avalia o contexto (ex: *"Apartamento pequeno"* + *"Pessoa muito ativa"* = *Compatível com cães de médio porte e alta energia*).
+4.  **Recomendação:** O sistema devolve uma lista de raças ou pets específicos ideais para aquele usuário.
+5.  **Suporte à ONG:** Quando a pessoa solicita a adoção, a ONG recebe esse relatório pronto, facilitando a triagem.
 
 ---
 
-## 📳 Validação Presencial via Arduino + QR Code
+## 🏷️ IoT & Identidade Digital (Smart Tags)
 
-No ponto de adoção, haverá um terminal com tecnologia **Arduino** e **QR Code**:
+Substituímos a carteirinha de papel por tecnologia embarcada na coleira:
 
-* O adotante aproxima o celular ou escaneia o código
-* O sistema verifica seu cadastro
-* Caso aprovado, o sistema libera a retirada do pet
-
----
-
-## 🧩 Área Exclusiva para ONGs
-
-As ONGs parceiras contarão com um **painel administrativo exclusivo**, que permitirá:
-
-* Editar informações dos pets cadastrados
-* Gerenciar os pontos de adoção e feiras
-* Aprovar ou recusar **novos cadastros de usuários**
-* Acessar a **lista de pessoas interessadas** em um determinado pet
-
-⚙️ As pessoas interessadas responderão a um **questionário de personalidade e estilo de vida** no momento do cadastro. Isso facilitará a ONG a identificar o perfil ideal para cada animal e tomar decisões mais assertivas na aprovação da adoção.
-
-📊 O sistema também contará com uma **ferramenta de recomendação automática** que sugere as **raças mais compatíveis** com a rotina da pessoa, levando em consideração fatores como:
-
-* Gasto de energia diário do animal
-* Necessidades específicas
-* Comportamento (mais agitado ou mais calmo)
+* **O Hardware:** Tags NFC passivas ou Placas com QR Code gravado.
+* **A Funcionalidade:** Ao aproximar o celular da coleira do pet, o App PetLar abre instantaneamente o perfil do animal contendo:
+    * Dados do Tutor (para casos de perda).
+    * Carteira de Vacinação Digital atualizada.
+    * Histórico médico resumido.
 
 ---
 
-## 🔍 Funcionalidade Extra: Pets Desaparecidos
+## 🛠 Tecnologias e Arquitetura
 
-O PetLar também terá um módulo específico para auxiliar na busca de pets desaparecidos. O tutor poderá cadastrar:
+O projeto utiliza uma arquitetura **Full Stack JavaScript** moderna e escalável.
 
-* Raça
-* Cor
-* Nome pelo qual o animal atende
-* Foto do pet
-* Descrição adicional (características marcantes, comportamento)
-* Local e data do desaparecimento
-* Dados de contato (telefone, e-mail)
+### 🌐 Web (Painel Administrativo)
+* **Framework:** React.js
+* **Build Tool:** Vite (para alta performance).
+* **Estilização:** CSS Modules / Styled Components.
 
-Essas informações ficarão **disponíveis publicamente** para todos os usuários, aumentando as chances de reencontro.
+### 📱 Mobile (App do Usuário)
+* **Framework:** React Native.
+* **Plataforma:** Expo.
+* **Recursos Nativos:** Câmera (Leitura de QR), NFC (Leitura de Tags).
 
----
+### 🔙 Back-end (API)
+* **Runtime:** Node.js.
+* **Framework:** Express.js (API RESTful).
+* **Autenticação:** JWT (JSON Web Tokens).
 
-## 🛠 Tecnologias Utilizadas
-
-### 🌐 Desenvolvimento Web
-
-* Front-end: HTML, CSS, JavaScript, React
-* Back-end: Java (API REST)
-
-### 📱 Desenvolvimento Mobile
-
-* React Native
+### 🤖 Automação & IA
+* **Orquestração:** **n8n** (Workflow Automation).
+* **IA:** Integração com LLMs (Agentes de IA) para análise de perfil.
 
 ### 💾 Banco de Dados
-
-* MySQL
-
-### 🔌 Sistemas Embarcados
-
-* Arduino + C (para interação com QR Code)
-
-### 🎨 Design
-
-* Figma
+* **SGBD:** MySQL.
 
 ---
 
-## 📑 Arquitetura do Sistema
+## 🧩 Diagrama de Arquitetura Simplificado
 
+```mermaid
+graph TD
+    User[📱 Usuário (App Expo)] -->|Requisições HTTP| API[🔙 API Node.js/Express]
+    ONG[💻 ONG (React + Vite)] -->|Gerenciamento| API
+    
+    API -->|Leitura/Escrita| DB[(💾 MySQL)]
+    
+    subgraph "Inteligência & Automação"
+        API -->|Envia Respostas do Quiz| N8N[⚡ Workflow n8n]
+        N8N -->|Prompt Contextual| AI[🤖 Agente de IA]
+        AI -->|Retorna Score de Match| N8N
+        N8N -->|Atualiza Perfil| API
+    end
+    
+    subgraph "Mundo Físico"
+        Tag[🏷️ Smart Tag (Coleira)] -.->|Scan NFC/QR| User
+        User -->|Consulta Vacinas| API
+    end
+````
+
+-----
+
+## 📦 Como Rodar o Projeto
+
+### Pré-requisitos
+
+  * Node.js (v18+)
+  * MySQL instalado e rodando
+  * Expo Go (no celular) ou Emulador Android/iOS
+
+### 1\. Configuração do Back-end
+
+```bash
+# Clone o repositório
+git clone [https://github.com/seu-usuario/petlar.git](https://github.com/seu-usuario/petlar.git)
+
+# Acesse a pasta do servidor
+cd petlar/backend
+
+# Instale as dependências
+npm install
+
+# Configure as variáveis de ambiente (.env)
+# (DB_HOST, DB_USER, DB_PASS, OPENAI_API_KEY, etc.)
+
+# Rode as migrações do banco
+npx sequelize-cli db:migrate
+
+# Inicie o servidor
+npm start
 ```
-Usuário
-  ↳ Aplicativo Mobile/Web
-    ↳ API (Java)
-      ↳ Banco de Dados (SQL)
-Ponto de Adoção
-  ↳ Dispositivo Arduino (QR Code)
-    ↳ Integração com API para validação
-ONG
-  ↳ Painel administrativo (Web)
-    ↳ Gerenciamento completo do processo
+
+### 2\. Configuração do Front-end Web (ONGs)
+
+```bash
+cd ../frontend-web
+
+# Instale as dependências
+npm install
+
+# Inicie com Vite
+npm run dev
 ```
 
----
+### 3\. Configuração do Mobile (Expo)
 
-## 🏗 Requisitos Funcionais
+```bash
+cd ../mobile
 
-* **RF01** – O sistema deve permitir cadastro de usuários com validação de documentos e comprovação de endereço.
-* **RF02** – O sistema deve listar pets de acordo com o tipo de residência do usuário.
-* **RF03** – O usuário pode buscar locais de adoção e feiras na sua cidade.
-* **RF04** – O sistema deve permitir adoção online, vinculada ao local.
-* **RF05** – A confirmação da adoção deve ser feita por aproximação no ponto físico (Arduino + QR Code).
-* **RF06** – O sistema deve aplicar um questionário de preferências ao usuário e, com base nos resultados, sugerir pets compatíveis por raça, porte e grau de atividade física.
-* **RF07** – O sistema deve permitir o cadastro de pets desaparecidos, com informações como raça, cor, nome pelo qual atende, foto, descrição e dados de contato do tutor.
-* **RF08** – O sistema deve disponibilizar uma seção pública com a listagem dos pets desaparecidos e os respectivos contatos dos tutores.
-* **RF09** – As ONGs terão acesso a um painel administrativo para aprovar ou recusar adoções e cadastros, editar informações de pets, e consultar interessados.
+# Instale as dependências
+npm install
 
----
+# Inicie o Expo
+npx expo start
+```
 
-## 🔐 Requisitos Não Funcionais
+-----
 
-* **RNF01** – O sistema deve ser responsivo.
-* **RNF02** – A autenticação dos usuários deve ser segura.
-* **RNF03** – As informações dos pets devem ser atualizadas em tempo real.
-* **RNF04** – O sistema Arduino deve ser robusto e suportar múltiplas conexões simultâneas.
+## 🛡️ Conformidade Legal e LGPD
 
----
+  * **Segurança de Dados:** O sistema segue as diretrizes da LGPD (Lei Geral de Proteção de Dados).
+  * **Termos de Uso:** O usuário aceita os termos e a política de privacidade no cadastro.
+  * **Posse Responsável:** Adoções são formalizadas via Termo de Responsabilidade digital.
 
-## 📚 Conformidade Legal e Regras do Aplicativo
-
-Para garantir a segurança, privacidade e responsabilidade em todo o processo de adoção, o **PetLar** segue as principais legislações brasileiras e apresenta documentos obrigatórios aos usuários. Abaixo estão listadas as leis aplicáveis e os termos que serão exigidos dentro do app e da plataforma web:
-
-### ✅ Leis que o sistema segue
-
-#### 📜 Lei Geral de Proteção de Dados Pessoais (LGPD – Lei nº 13.709/2018)
-- Regula o uso, coleta, armazenamento e compartilhamento de dados pessoais.
-- Exige **consentimento explícito** para uso dos dados.
-- Os usuários têm direito de solicitar **exclusão**, **correção** ou **portabilidade** de seus dados.
-
-#### 📜 Marco Civil da Internet (Lei nº 12.965/2014)
-- Garante **privacidade**, **liberdade de expressão** e **proteção de dados**.
-- Reforça a necessidade de **termos de uso claros e acessíveis**.
-
-#### 📜 Código de Defesa do Consumidor (Lei nº 8.078/1990)
-- Garante **transparência** nas relações de consumo e prestação de serviços.
-- Aplica-se especialmente a **recursos pagos**, **doações** e **suporte**.
-
-#### 📜 Leis sobre Adoção e Bem-Estar Animal
-- **Lei de Crimes Ambientais (Lei nº 9.605/98 – Art. 32)**: Proíbe maus-tratos a animais.
-- **Leis estaduais/municipais** que regem a **posse responsável** e **regras para adoção**.
-- **Resoluções do Conselho Federal de Medicina Veterinária (CFMV)** sobre saúde animal e castração.
-
----
-
-### ✍️ Documentos e Termos que o usuário deve aceitar
-
-#### 📄 Termo de Uso
-- Define as **regras de uso** do aplicativo e site.
-- Inclui **condições de cadastro**, **responsabilidades do usuário** e **limitações da plataforma**.
-
-#### 🔐 Política de Privacidade
-- Explica como os **dados são coletados, armazenados e utilizados**.
-- Informa sobre o **compartilhamento com ONGs** e os **direitos dos usuários** (acesso, exclusão, alteração).
-
-#### 📝 Termo de Responsabilidade para Adoção
-- Documento digital assinado no momento da **solicitação de adoção**.
-- Contém **compromissos com o bem-estar animal** e **regras da posse responsável**.
-
----
-
-### 🧠 Boas Práticas Adicionais
-
-- Consentimento explícito em todas as etapas sensíveis (envio de documentos, solicitações de adoção).
-- Validação da **maioridade** (maiores de 18 anos).
-- Aviso de que as **sugestões do sistema são indicativas** e não garantem compatibilidade perfeita.
-- **Logs e auditorias** dos acessos das ONGs para garantir **transparência**.
-
----
-
-### ✅ Tela de Consentimento no Cadastro
-
-Durante o cadastro, o aplicativo exibirá uma tela de aceite onde o usuário deverá concordar com:
-
-- ✅ Termo de Uso  
-- ✅ Política de Privacidade  
-- ✅ Termo de Responsabilidade para Adoção  
-
-Essas medidas garantem que a experiência de adoção via **PetLar** seja **segura**, **ética** e **legalmente responsável**.
-
----
+-----
 
 ## 🤝 Colaboradores
 
-* **Pedro Henrique Coltro**
-* **Lucas D'ávila Martins**
+\<table\>
+\<tr\>
+\<td align="center"\>
+\<a href="\#"\>
+\<img src="https://www.google.com/search?q=https://via.placeholder.com/100" width="100px;" alt="Foto do Pedro"/\><br>
+\<sub\>\<b\>Pedro Henrique Coltro\</b\>\</sub\>
+\</a\>
+\</td\>
+\<td align="center"\>
+\<a href="\#"\>
+\<img src="https://www.google.com/search?q=https://via.placeholder.com/100" width="100px;" alt="Foto do Lucas"/\><br>
+\<sub\>\<b\>Lucas D'ávila Martins\</b\>\</sub\>
+\</a\>
+\</td\>
+\</tr\>
+\</table\>
