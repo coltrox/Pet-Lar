@@ -1,174 +1,230 @@
+Aqui está o **README.md** finalizado.
+
+Foquei totalmente na **hierarquia visual** e na **identação**. Usei listas aninhadas, tabelas e divisórias para que, quem bata o olho no repositório, entenda imediatamente a profundidade técnica do projeto.
+
+Basta copiar e colar o bloco abaixo no seu arquivo `README.md`.
+
+-----
+
+````markdown
 # 🐾 PetLar - Sistema de Adoção Consciente e Inteligente
 
-![Project Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
-![License](https://img.shields.io/badge/License-MIT-blue)
-![Stack](https://img.shields.io/badge/Tech-FullStack_JS-green)
+<div align="center">
+
+![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+![Stack](https://img.shields.io/badge/Tech-FullStack_JS-green?style=for-the-badge)
+
+<br>
 
 > **Projeto de TCC (Trabalho de Conclusão de Curso)**
+>
 > *Conectando corações peludos a lares preparados através de tecnologia, dados e inteligência artificial.*
 
----
-
-## 📖 Sobre o Projeto
-
-O **PetLar** é um ecossistema multiplataforma (Mobile e Web) que visa revolucionar a adoção de animais, mitigando o problema da devolução de pets. Diferente de plataformas comuns que funcionam apenas como vitrines, o PetLar atua como um **sistema de suporte à decisão**.
-
-Utilizando **Inteligência Artificial** e fluxos de automação, o sistema analisa o perfil comportamental do adotante e sugere a compatibilidade com os animais disponíveis. Além disso, introduzimos a **Identidade Digital (Smart Tags)**, modernizando o acompanhamento da saúde animal pós-adoção.
-
-### 🎯 O Grande Diferencial: "Match" via IA
-O sistema não apenas lista animais. Ele utiliza agentes de IA para cruzar dados subjetivos (rotina, tamanho da casa, nível de energia do tutor) com as necessidades etológicas do animal.
-
-> **⚠️ Nota Importante:** A IA atua como um *filtro qualificado* para auxiliar as ONGs. Ela recomenda, mas não decide. A decisão final de aprovação da adoção permanece **100% humana e manual** por parte da instituição responsável.
+</div>
 
 ---
 
-## 🚀 Funcionalidades Principais
+## 📖 1. Visão Geral do Projeto
 
-### 📱 Aplicativo Mobile (Para Adotantes)
-* **Cadastro Completo:** Upload de documentos e validação de identidade.
-* **Quiz de Lifestyle:** Formulário interativo sobre rotina, moradia e preferências.
-* **Feed Inteligente:** Listagem de pets ordenada por "Score de Compatibilidade" gerado pela IA.
-* **Solicitação de Adoção:** Envio de interesse com "Dossiê do Adotante" automático para a ONG.
-* **Smart Tag Reader:** Leitor de QR Code/NFC integrado para acessar a carteira de vacinação digital de qualquer pet cadastrado.
-* **Mural de Desaparecidos:** Cadastro e busca colaborativa de pets perdidos.
+O **PetLar** é um ecossistema multiplataforma (Mobile e Web) desenvolvido para mitigar o problema da devolução de animais adotados.
 
-### 💻 Painel Web (Para ONGs e Protetores)
-* **Dashboard Administrativo:** Visão geral de adoções e pets cadastrados.
-* **Gestão de Solicitações:** Recebimento de pedidos com análise prévia da IA (ex: *"Candidato compatível, mas atenção ao tempo livre"*).
-* **Prontuário Digital:** Edição do histórico de vacinas e saúde vinculado à Smart Tag do animal.
-* **Fluxo de Aprovação:** Ferramentas para aprovar (transferir posse digital) ou recusar (com feedback) as adoções.
+Diferente de plataformas comuns que funcionam apenas como vitrines de fotos, o PetLar atua como um **Sistema de Suporte à Decisão (SSD)**. Utilizamos Inteligência Artificial para garantir que o perfil do animal seja compatível com a rotina e o ambiente do adotante.
+
+### 🎯 Os Pilares do Projeto
+1.  **Adoção Baseada em Dados:** Match comportamental entre humano e animal.
+2.  **Identidade Digital (IoT):** Histórico médico armazenado na coleira (Smart Tags).
+3.  **Segurança e Ética:** A decisão final é sempre humana (ONG), amparada por dados (IA).
 
 ---
 
-## 🧠 Como Funciona a Inteligência do Sistema
+## 🧠 2. Inteligência Artificial e Automação
 
-1.  **Coleta de Dados:** O usuário responde ao formulário de perfil no App.
-2.  **Processamento (n8n):** O workflow automatizado coleta essas respostas e as envia para um **Agente de IA**.
-3.  **Análise Semântica:** O Agente avalia o contexto (ex: *"Apartamento pequeno"* + *"Pessoa muito ativa"* = *Compatível com cães de médio porte e alta energia*).
-4.  **Recomendação:** O sistema devolve uma lista de raças ou pets específicos ideais para aquele usuário.
-5.  **Suporte à ONG:** Quando a pessoa solicita a adoção, a ONG recebe esse relatório pronto, facilitando a triagem.
+O "cérebro" do sistema utiliza fluxos de automação (**n8n**) integrados a Agentes de IA (**LLMs**).
 
----
+### 🔄 Como o "Match" Funciona (Passo a Passo)
 
-## 🏷️ IoT & Identidade Digital (Smart Tags)
+1.  **Coleta de Dados Subjetivos**
+    * O usuário responde a um *Quiz Interativo* no App Mobile.
+    * *Perguntas:* Rotina, tamanho da residência, tempo livre, experiência prévia, etc.
 
-Substituímos a carteirinha de papel por tecnologia embarcada na coleira:
+2.  **Processamento Semântico (Agente de IA)**
+    * O sistema não faz apenas um filtro de "Sim/Não".
+    * O Agente analisa o contexto.
+        * *Exemplo:* "Usuário mora em apartamento pequeno" + "Corre 10km todo dia" = **Compatível** com cães de energia média/alta.
 
-* **O Hardware:** Tags NFC passivas ou Placas com QR Code gravado.
-* **A Funcionalidade:** Ao aproximar o celular da coleira do pet, o App PetLar abre instantaneamente o perfil do animal contendo:
-    * Dados do Tutor (para casos de perda).
-    * Carteira de Vacinação Digital atualizada.
-    * Histórico médico resumido.
+3.  **Recomendação e Score**
+    * O sistema gera um **Score de Compatibilidade**.
+    * Quando o usuário solicita a adoção, a ONG recebe esse relatório pronto.
 
----
-
-## 🛠 Tecnologias e Arquitetura
-
-O projeto utiliza uma arquitetura **Full Stack JavaScript** moderna e escalável.
-
-### 🌐 Web (Painel Administrativo)
-* **Framework:** React.js
-* **Build Tool:** Vite (para alta performance).
-* **Estilização:** CSS Modules / Styled Components.
-
-### 📱 Mobile (App do Usuário)
-* **Framework:** React Native.
-* **Plataforma:** Expo.
-* **Recursos Nativos:** Câmera (Leitura de QR), NFC (Leitura de Tags).
-
-### 🔙 Back-end (API)
-* **Runtime:** Node.js.
-* **Framework:** Express.js (API RESTful).
-* **Autenticação:** JWT (JSON Web Tokens).
-
-### 🤖 Automação & IA
-* **Orquestração:** **n8n** (Workflow Automation).
-* **IA:** Integração com LLMs (Agentes de IA) para análise de perfil.
-
-### 💾 Banco de Dados
-* **SGBD:** MySQL.
+> **⚠️ Nota Importante:** A IA atua como um **filtro qualificado**. Ela recomenda, mas não decide. A aprovação da adoção permanece **100% manual** pela ONG.
 
 ---
 
-## 📦 Como Rodar o Projeto
+## 🏷️ 3. Internet das Coisas (IoT): Smart Tags
+
+Substituímos a carteirinha de vacinação de papel por uma **Identidade Digital** física.
+
+* **Hardware:** Tag NFC ou Placa com QR Code na coleira.
+* **Funcionalidade:**
+    * Ao aproximar o celular da tag, abre-se o **Prontuário Digital**.
+    * Contém: Vacinas, alergias, idade e contato do tutor (para casos de perda).
+    * *Segurança:* Apenas o tutor validado e a ONG podem editar os dados médicos.
+
+---
+
+## 🚀 4. Funcionalidades Detalhadas
+
+### 📱 Aplicativo Mobile (Adotante)
+* **Gestão de Identidade:**
+    * Cadastro com upload de documentos (RG/Comp. Residência).
+    * Validação de perfil.
+* **Adoção:**
+    * Feed de pets ordenado por compatibilidade.
+    * Solicitação de adoção com envio automático de "Dossiê".
+* **Utilitários:**
+    * Leitor de Smart Tag (QR/NFC).
+    * Mural colaborativo de **Pets Desaparecidos**.
+
+### 💻 Painel Web (ONG / Administrador)
+* **Gestão de Processos:**
+    * Visualização de solicitações pendentes.
+    * Acesso ao "Relatório de IA" sobre o candidato.
+* **Controle de Estoque (Pets):**
+    * Cadastro de animais e vínculo com Smart Tags.
+    * Gestão de vacinas e histórico médico.
+* **Aprovação:**
+    * Ferramentas para Aprovar (transfere a posse digital) ou Recusar solicitações.
+
+---
+
+## 🛠 5. Stack Tecnológica
+
+O projeto utiliza uma arquitetura **Full Stack JavaScript** moderna.
+
+| Camada | Tecnologia | Detalhes |
+| :--- | :--- | :--- |
+| **Mobile** | **React Native** | Framework principal. |
+| **Plataforma** | **Expo** | Gerenciamento de build e acesso nativo (NFC/Câmera). |
+| **Front-end Web** | **React.js** | SPA para o painel administrativo. |
+| **Build Tool** | **Vite** | Compilação rápida e otimizada. |
+| **Back-end** | **Node.js** | Runtime de servidor. |
+| **Framework API** | **Express.js** | API RESTful. |
+| **Banco de Dados** | **MySQL** | Armazenamento relacional (via Sequelize ORM). |
+| **Automação** | **n8n** | Orquestração dos fluxos de dados. |
+| **Design** | **Figma** | Prototipagem de UI/UX. |
+
+---
+
+## 📂 6. Estrutura de Pastas
+
+A organização do código segue o padrão de monorepo lógico:
+
+```bash
+petlar-project/
+├── backend/            # API (Node.js + Express)
+│   ├── src/
+│   │   ├── controllers/# Lógica das rotas
+│   │   ├── models/     # Modelos do Banco (Sequelize)
+│   │   ├── services/   # Integração com AI e n8n
+│   │   └── routes/     # Endpoints da API
+│   └── .env            # Variáveis de ambiente
+│
+├── frontend-web/       # Painel Admin (React + Vite)
+│   ├── src/
+│   │   ├── components/ # Componentes reutilizáveis
+│   │   ├── pages/      # Telas do Dashboard
+│   │   └── services/   # Conexão com a API (Axios)
+│
+└── mobile/             # App do Usuário (Expo)
+    ├── src/
+    │   ├── screens/    # Telas do App
+    │   ├── context/    # AuthContext e UserContext
+    │   └── components/ # Botões, Cards, Inputs
+    └── app.json        # Configuração do Expo
+````
+
+-----
+
+## 📦 7. Instalação e Execução
+
+Siga os passos abaixo para rodar o projeto localmente.
 
 ### Pré-requisitos
 
-  * Node.js (v18+)
-  * MySQL instalado e rodando
-  * Expo Go (no celular) ou Emulador Android/iOS
+  * Node.js (v18 ou superior)
+  * MySQL Server rodando
+  * Expo Go instalado no celular (para testar o mobile)
 
-### 1\. Configuração do Back-end
+### Passo 1: Back-end (API)
 
 ```bash
-# Clone o repositório
+# 1. Clone o repositório
 git clone [https://github.com/seu-usuario/petlar.git](https://github.com/seu-usuario/petlar.git)
 
-# Acesse a pasta do servidor
+# 2. Entre na pasta
 cd petlar/backend
 
-# Instale as dependências
+# 3. Instale as dependências
 npm install
 
-# Configure as variáveis de ambiente (.env)
-# (DB_HOST, DB_USER, DB_PASS, OPENAI_API_KEY, etc.)
+# 4. Configure as variáveis de ambiente
+# Crie um arquivo .env na raiz do backend e preencha:
+# DB_HOST=localhost
+# DB_USER=root
+# DB_PASS=sua_senha
+# OPENAI_API_KEY=sua_chave_aqui
 
-# Rode as migrações do banco
+# 5. Execute as migrações do banco
 npx sequelize-cli db:migrate
 
-# Inicie o servidor
-npm start
-```
-
-### 2\. Configuração do Front-end Web (ONGs)
-
-```bash
-cd ../frontend-web
-
-# Instale as dependências
-npm install
-
-# Inicie com Vite
+# 6. Inicie o servidor
 npm run dev
 ```
 
-### 3\. Configuração do Mobile (Expo)
+### Passo 2: Front-end (Web)
 
 ```bash
-cd ../mobile
+# 1. Entre na pasta web
+cd ../frontend-web
 
-# Instale as dependências
+# 2. Instale as dependências
 npm install
 
-# Inicie o Expo
+# 3. Rode o projeto
+npm run dev
+# O painel estará acessível em: http://localhost:5173
+```
+
+### Passo 3: Mobile (App)
+
+```bash
+# 1. Entre na pasta mobile
+cd ../mobile
+
+# 2. Instale as dependências
+npm install
+
+# 3. Inicie o Expo
 npx expo start
+# Escaneie o QR Code gerado com o app Expo Go no seu celular.
 ```
 
 -----
 
-## 🛡️ Conformidade Legal e LGPD
+## 🛡️ 8. Conformidade Legal
 
-  * **Segurança de Dados:** O sistema segue as diretrizes da LGPD (Lei Geral de Proteção de Dados).
-  * **Termos de Uso:** O usuário aceita os termos e a política de privacidade no cadastro.
-  * **Posse Responsável:** Adoções são formalizadas via Termo de Responsabilidade digital.
+Este projeto foi desenvolvido respeitando as diretrizes éticas e legais vigentes no Brasil.
+
+1.  **LGPD (Lei Geral de Proteção de Dados):**
+      * Coleta mínima de dados.
+      * Consentimento explícito para processamento via IA.
+2.  **Bem-Estar Animal:**
+      * A tecnologia serve como meio para a Posse Responsável.
+      * Termos de responsabilidade são assinados digitalmente.
 
 -----
 
-## 🤝 Colaboradores
-
-\<table\>
-\<tr\>
-\<td align="center"\>
-\<a href="\#"\>
-\<img src="https://www.google.com/search?q=https://via.placeholder.com/100" width="100px;" alt="Foto do Pedro"/\><br>
-\<sub\>\<b\>Pedro Henrique Coltro\</b\>\</sub\>
-\</a\>
-\</td\>
-\<td align="center"\>
-\<a href="\#"\>
-\<img src="https://www.google.com/search?q=https://via.placeholder.com/100" width="100px;" alt="Foto do Lucas"/\><br>
-\<sub\>\<b\>Lucas D'ávila Martins\</b\>\</sub\>
-\</a\>
-\</td\>
-\</tr\>
-\</table\>
+## 🤝 9. Colaboradores
+Pedro Henrique Coltro
+>Lucas D'ávila Martins
