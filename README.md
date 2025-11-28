@@ -1,6 +1,3 @@
-Aqui está o arquivo **README.md** completo. É só copiar e colar no seu projeto.
-
-````markdown
 # 🐾 PetLar - Sistema de Adoção Consciente e Inteligente
 
 ![Project Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
@@ -92,30 +89,6 @@ O projeto utiliza uma arquitetura **Full Stack JavaScript** moderna e escalável
 * **SGBD:** MySQL.
 
 ---
-
-## 🧩 Diagrama de Arquitetura Simplificado
-
-```mermaid
-graph TD
-    User[📱 Usuário (App Expo)] -->|Requisições HTTP| API[🔙 API Node.js/Express]
-    ONG[💻 ONG (React + Vite)] -->|Gerenciamento| API
-    
-    API -->|Leitura/Escrita| DB[(💾 MySQL)]
-    
-    subgraph "Inteligência & Automação"
-        API -->|Envia Respostas do Quiz| N8N[⚡ Workflow n8n]
-        N8N -->|Prompt Contextual| AI[🤖 Agente de IA]
-        AI -->|Retorna Score de Match| N8N
-        N8N -->|Atualiza Perfil| API
-    end
-    
-    subgraph "Mundo Físico"
-        Tag[🏷️ Smart Tag (Coleira)] -.->|Scan NFC/QR| User
-        User -->|Consulta Vacinas| API
-    end
-````
-
------
 
 ## 📦 Como Rodar o Projeto
 
