@@ -1,12 +1,3 @@
-Aqui está o **README.md** finalizado.
-
-Foquei totalmente na **hierarquia visual** e na **identação**. Usei listas aninhadas, tabelas e divisórias para que, quem bata o olho no repositório, entenda imediatamente a profundidade técnica do projeto.
-
-Basta copiar e colar o bloco abaixo no seu arquivo `README.md`.
-
------
-
-````markdown
 # 🐾 PetLar - Sistema de Adoção Consciente e Inteligente
 
 <div align="center">
