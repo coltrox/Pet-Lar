@@ -218,4 +218,4 @@ Este projeto foi desenvolvido respeitando as diretrizes éticas e legais vigente
 
 ## 🤝 9. Colaboradores
 Pedro Henrique Coltro
->Lucas D'ávila Martins
+Lucas D'ávila Martins
